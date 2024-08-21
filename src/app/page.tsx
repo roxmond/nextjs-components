@@ -36,7 +36,7 @@ export default function Home() {
         <a
           href="components"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
+          
           rel="noopener noreferrer"
         >
           <h2 className="mb-3 text-2xl font-semibold">
@@ -46,7 +46,7 @@ export default function Home() {
             </span>
           </h2>
           <p className="m-0 max-w-[30ch] text-sm opacity-50">
-          Find reusable components like buttons, forms, cards, and more, all styled with Tailwind's utility classes for a consistent and responsive design.
+          Find reusable components like buttons, forms, cards, and more, all styled with Tailwind&apos;s utility classes for a consistent and responsive design.
           </p>
         </a>
 
@@ -55,7 +55,7 @@ export default function Home() {
         <a
           href="templates"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
+          
           rel="noopener noreferrer"
         >
           <h2 className="mb-3 text-2xl font-semibold">
