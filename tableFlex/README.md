@@ -83,3 +83,7 @@ You have to declare the tableContent as follows:
  ```/>```
 
  *Note that the ```row```, ```col```, ```rowSpan```, and ```colSpan``` follows the indexing so col=0, row=0 is the cell 1x1.*
+
+ ### More
+
+ For more you can visit my [GitHub](https://github.com/roxmond/) and my [Next.js Components](https://nextjs-components-blush.vercel.app/)

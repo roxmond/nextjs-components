@@ -1,18 +1,5 @@
-import profilePic from "@/public/profile-pic.png";
-import logo from "@/public/logo-transparent.png";
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import { IoIosNotifications } from "react-icons/io";
-import { FaUserFriends } from "react-icons/fa";
-import {
-  BsFillGearFill,
-  BsFillEnvelopeFill,
-  BsFillFileEarmarkFill,
-} from "react-icons/bs";
-
-import { FiLogOut } from "react-icons/fi";
 import Link from "next/link";
-//import navbar from ".";
 
 interface NavBarProps {
   onSelectOption: (option: string) => void;
@@ -21,17 +8,19 @@ interface NavBarProps {
 export default function NavBar({ onSelectOption }: NavBarProps) {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
-  
     const toggleMenu = () => {
       setIsOpen(!isOpen);
     };
-  
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsOpen(false);
       }
     };
-  
+    const handleOptionClick = (option: string) => {
+      onSelectOption(option); // Call the callback with the selected option
+      setIsOpen(false); // Close the menu
+    };
+
     useEffect(() => {
       document.addEventListener('mousedown', handleClickOutside);
       return () => {
@@ -39,14 +28,10 @@ export default function NavBar({ onSelectOption }: NavBarProps) {
       };
     }, []);
   
-    const handleOptionClick = (option: string) => {
-      onSelectOption(option); // Call the callback with the selected option
-      setIsOpen(false); // Close the menu
-    };
 
     return (
-      <div className="flex justify-center items-center sticky top-1 z-10">
-        <nav className="p-4 relative left-0 top-2 flex w-[98%] items-center rounded-xl border justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit ">
+      <div className="flex justify-center items-center sticky top-1 z-10 ">
+        <nav className="p-4 top-2 ml-2 mr-2 flex w-full items-center rounded-xl border justify-center bg-slate-900 bg-opacity-35 backdrop-blur-[5px]"> {/*from-zinc-200*/}
 
       
         <div className="container mx-auto flex justify-between items-center">
@@ -76,12 +61,27 @@ export default function NavBar({ onSelectOption }: NavBarProps) {
 
             
   
-            {/* Dropdown Menu as Pop-up */}
-            {isOpen && (
+            
+          </div>
+          
+  
+          <div className="md:flex md:space-x-4">
+            
+            <Link href="/">
+                <span className="text-white hover:bg-gray-700 block px-4 py-2">
+                    Back
+                </span>
+            </Link>
+            
+          </div>
+          
+        </div>
+      </nav>
+      {/* Dropdown Menu as Pop-up */}
+      {isOpen && (
               <div
                 ref={dropdownRef}
-                className="absolute mt-3 top-12 left-0 w-72 border rounded-xl bg-gradient-to-b from-zinc-200 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit border-gray-700 shadow-lg z-50"
-              >
+                className="absolute mt-8 top-12 left-2 sm:left-44 md:left-16 w-72 border rounded-xl justify-center bg-slate-900 bg-opacity-35 backdrop-blur-[15px]">
                 <ul className="flex flex-col">
                   <li>
                     <Link href="#">
@@ -107,21 +107,6 @@ export default function NavBar({ onSelectOption }: NavBarProps) {
                 </ul>
               </div>
             )}
-          </div>
-          
-  
-          <div className="md:flex md:space-x-4">
-            
-            <Link href="/">
-                <span className="text-white hover:bg-gray-700 block px-4 py-2">
-                    Back
-                </span>
-            </Link>
-            
-          </div>
-          
-        </div>
-      </nav>
       </div>
     );
   }

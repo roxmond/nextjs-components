@@ -64,7 +64,8 @@ const handleCopy = () => {
 };
 
     return (
-        <div className="min-w-full h-auto flex flex-col justify-center items-center text-center">
+        <div className="min-w-full h-auto flex flex-col justify-center items-center text-center -mt-[5em]">
+            <h1 className='text-slate-400 mb-9'>TableFlex</h1>
         <table style={{ width, border, borderStyle, borderColor }}>
             <tbody>
                 {Array.from({ length: y }, (_, rowIndex) => (
@@ -109,14 +110,15 @@ const handleCopy = () => {
             </tbody>
         </table>
 
-        <div>
+        <div className=''>
+            
         <p className="text-slate-400 mt-9">
       TableFlex is a flexible and customizable table component for Next.js, built with TypeScript. You can easily create dynamic and responsive tables tailored to your specific needs.
       </p>
-      <code className="text-sm sm:text-base inline-flex text-left items-center space-x-4 bg-gray-800 text-white rounded-lg p-4 pl-6 mt-9" onClick={handleCopy}>
+      <code className="inline-flex text-left items-center space-x-4 bg-gray-800 text-white rounded-lg p-4 pl-6 mt-9" onClick={handleCopy}>
         <span className="flex gap-4">
           <span className="flex-1">
-            <p>npm i <span className="text-yellow-500">tableflex</span></p>
+            <p><span className="text-gray-500">$</span> npm i <span className="text-yellow-500">tableflex</span></p>
           </span>
         </span>
 
@@ -133,8 +135,8 @@ const handleCopy = () => {
       <p className="text-slate-400 mt-9">
       On the tsconfig.json add the following path:
       </p>
-      <pre className="z-0 mt-9 p-4 relative left-0 top-2 flex w-fit text-left items-center rounded-xl border justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit ">
-      <code>
+      <pre className="z-0 mt-9 p-4 relative left-0 top-2 flex max-w-fit text-left items-center rounded-xl border justify-center border-b border-gray-300 bg-gradient-to-b backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit ">
+      <code className='sm:text-[16px] text-[9px]'>
         
       <span>&#123;</span><br/>
       &nbsp;&nbsp;&nbsp;&nbsp;<span>&#34;</span>compilerOptions<span>&#34;</span>:<span>&#123;</span><br/>
@@ -148,12 +150,52 @@ const handleCopy = () => {
       </code>
       </pre>
 
-      <p className="text-slate-400 mt-9">
-      Add the component into your code adding three required props.<br/>
+      <p className="text-slate-400 mt-9 text-left p-3">
+        Add the component into your code adding three required props.<br/><br/>
+        x <span className="text-[#4ec990]">&#47;&#47; to set the table columns</span><br/>
+        y <span className="text-[#4ec990]">&#47;&#47; to set the table rows</span><br/>
+        content <span className="text-[#4ec990]">&#47;&#47; to set the content of your table</span>
+      </p>
 
-x // to set the table columns<br/>
-y // to set the table rows<br/>
-content // to set the content of your table
+      <pre className="z-0 mt-9 p-4 relative left-0 top-2 flex max-w-fit text-left items-center rounded-xl border justify-center border-b border-gray-300 bg-gradient-to-b backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit ">
+        <code className='sm:text-[16px] text-[11px]'>
+        <span className="text-[#808073]">&lt;</span><span className="text-[#4ec990]">TableFlex</span> <span className='text-[#9cd0c6]'>x</span>=<span className='text-[#1b9ff1]'>&#123;</span><span className='text-[#b5ac5f]'>3</span><span className='text-[#1b9ff1]'>&#125;</span><span className='text-[#9cd0c6]'>y</span>=<span className='text-[#1b9ff1]'>&#123;</span><span className='text-[#b5ac5f]'>3</span><span className='text-[#1b9ff1]'>&#125;</span> <span className='text-[#9cd0c6]'>content</span>=<span className='text-[#1b9ff1]'>&#123;</span><span className='text-[#9cd0c6]'>tableContent</span><span className='text-[#1b9ff1]'>&#125;</span> <span className="text-[#808073]">&#47;&gt;</span>
+        </code>
+      </pre>
+      <p className="text-slate-400 mt-9">
+      Setting the Table Content
+      </p>
+      <pre className="z-0 mt-9 p-4 relative left-0 top-2 flex max-w-fit text-left items-center rounded-xl border justify-center border-b border-gray-300 bg-gradient-to-b backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit ">
+      <code className='sm:text-[16px] text-[9px]'>
+      const tableContent = &#91;<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&#91;&#34;1.1&#34;, &#34;1.2&#34;, &#34;1.3&#34;&#93;,<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&#91;&#34;2.1&#34;, &#34;2.2&#34;, &#34;2.3&#34;,&#93;,<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&#91;&#34;3.1&#34;, &#34;3.2&#34;, &#34;3.3&#34;,&#93;,<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&#47;&#47; For more rows continue with &#34;4.1&#34;, &#34;4.2&#34; etc.<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&#47;&#47; For more cols contunue with &#34;1.4&#34;, &#34;2.4&#34; etc.<br/>
+    &#93;;
+
+      </code>
+      </pre>
+
+      <p className="text-slate-400 mt-9">
+      Other Props
+      </p>
+
+      <p className="text-slate-400 mt-9 text-left p-3">
+        width <span className="text-[#4ec990] text-sm">&#47;&#47; to set the table width <i>&#40;string -&#62; ex. width=&#34;50%&#34;&#41;</i></span><br/>
+        height <span className="text-[#4ec990] text-sm">&#47;&#47;  to set the table height <i>&#40;string -&#62; ex. height=&#34;45px&#34;&#41;</i></span><br/>
+        padding <span className="text-[#4ec990] text-sm">&#47;&#47; to set the cell padding <i>&#40;string -&#62; ex. padding=&#34;15px&#34;&#41;</i></span><br/>
+        align <span className="text-[#4ec990] text-sm">&#47;&#47; to set the cell align <i>&#40;only left, right, center or justify -&#62; ex. align=&#34;center&#34;&#41;</i></span><br/>
+        border <span className="text-[#4ec990] text-sm">&#47;&#47; to set the table and cell border width <i>&#40;string -&#62; ex. border=&#34;5px&#34;&#41;</i></span><br/>
+        borderStyle <span className="text-[#4ec990] text-sm">&#47;&#47; to set the table and cell border style <i>&#40;string -&#62; ex. borderStyle=&#34;solid&#34;&#41;</i></span><br/>
+        borderColor <span className="text-[#4ec990] text-sm">&#47;&#47; to set the table and cell border color <i>&#40;string -&#62; ex. borderColor=&#34;#c4c4c4&#34;&#41;</i></span><br/>
+        hover <span className="text-[#4ec990] text-sm">&#47;&#47;  to enable the cell hover <i>&#40;boolean -&#62; ex. hover={true}&#41;</i></span><br/>
+        hoverColor <span className="text-[#4ec990] text-sm">&#47;&#47;  to set hover color <i>&#40;string -&#62; ex. hoverColor=&#34;#c4c4c4&#34;&#41;</i></span>
+      </p>
+      
+      <p className="text-slate-400 mt-9">
+      For how you can merge cells, please follow the link <a href='https://www.npmjs.com/package/tableflex' target="_blank" className='text-cyan-500'>NPM TableFlex</a>.
       </p>
       
       
