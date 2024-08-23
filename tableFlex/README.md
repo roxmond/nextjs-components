@@ -73,7 +73,7 @@ You have to declare the tableContent as follows:
 
  *Note that the ```row```, ```col```, ```rowSpan```, and ```colSpan``` follows the indexing so col=0, row=0 is the cell 1x1.*
 
- ### Version Notes (1.0.3 - 1.1.3)
+ ### Version Notes (1.0.3 - 1.1.4)
 
  - Node Modules path for TableFlex fixed.
  ### More
