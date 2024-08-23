@@ -65,7 +65,7 @@ const handleCopy = () => {
 
     return (
         <div className="min-w-full h-auto flex flex-col justify-center items-center text-center -mt-[5em]">
-            <h1 className='text-slate-400 mb-9'>TableFlex</h1>
+            <h1 className='text-slate-400 mb-9'>TableFlex v1.1.4</h1>
         <table style={{ width, border, borderStyle, borderColor }}>
             <tbody>
                 {Array.from({ length: y }, (_, rowIndex) => (
@@ -132,23 +132,7 @@ const handleCopy = () => {
       </code>
 
       <div className='flex flex-col justify-center items-center'>      
-      <p className="text-slate-400 mt-9">
-      On the tsconfig.json add the following path:
-      </p>
-      <pre className="z-0 mt-9 p-4 relative left-0 top-2 flex max-w-fit text-left items-center rounded-xl border justify-center border-b border-gray-300 bg-gradient-to-b backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit ">
-      <code className='sm:text-[16px] text-[9px]'>
-        
-      <span>&#123;</span><br/>
-      &nbsp;&nbsp;&nbsp;&nbsp;<span>&#34;</span>compilerOptions<span>&#34;</span>:<span>&#123;</span><br/>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#47;&#47; ... existing options ...<br/>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#34;paths&#34;: <span>&#123;</span><br/>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#34;tableflex&#34;: <span>&#91;</span>&#34;./node_modules/tableflex/src/index.ts&#34;<span>&#93;</span><br/>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>&#125;</span><br/>
-      &nbsp;&nbsp;&nbsp;<span>&#125;</span><br/>
-      <span>&#125;</span>
       
-      </code>
-      </pre>
 
       <p className="text-slate-400 mt-9 text-left p-3">
         Add the component into your code adding three required props.<br/><br/>
