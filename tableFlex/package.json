@@ -1,6 +1,6 @@
 {
   "name": "tableflex",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "Flexible and customizable table component for Next.js, built with TypeScript. Easily create dynamic and responsive tables tailored to your specific needs.",
   "main": "index.js",
   "scripts": {
