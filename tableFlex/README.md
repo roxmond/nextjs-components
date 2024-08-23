@@ -6,17 +6,6 @@ TableFlex is a flexible and customizable table component for Next.js, built with
 
 ```npm i tableflex```
 
-On the ```tsconfig.json``` add the following path:
-
-```{```<br>
-&nbsp;&nbsp;&nbsp;&nbsp;```"compilerOptions": {```<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```// ... existing options ...```<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```"paths": {```<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```"tableflex": ["./node_modules/tableflex/src/index.ts"]```<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```}```<br>
-&nbsp;&nbsp;&nbsp;&nbsp;```}```<br>
-```}```
-
 ## Documentation
 
 Add the <TableFlex /> component into your code adding three required props.
@@ -84,6 +73,9 @@ You have to declare the tableContent as follows:
 
  *Note that the ```row```, ```col```, ```rowSpan```, and ```colSpan``` follows the indexing so col=0, row=0 is the cell 1x1.*
 
+ ### Version Notes (1.0.3 - 1.1.3)
+
+ - Node Modules path for TableFlex fixed.
  ### More
 
  For more you can visit my [GitHub](https://github.com/roxmond/) and my [Next.js Components](https://nextjs-components-blush.vercel.app/)
